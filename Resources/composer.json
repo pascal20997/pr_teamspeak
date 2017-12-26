@@ -1,0 +1,16 @@
+{
+  "name": "kronova/pr-teamspeak-libraries",
+  "description": "Libraries for pr_teamspeak extension",
+  "config": {
+    "vendor-dir": "Libraries"
+  },
+  "require": {
+    "planetteamspeak/ts3-php-framework": "^1.1"
+  },
+  "authors": [
+    {
+      "name": "Pascal Rinker",
+      "email": "info@kronova.net"
+    }
+  ]
+}

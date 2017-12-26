@@ -1,0 +1,69 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "1fbe4745064d7da1e2d5467b13f409a2",
+    "content-hash": "8ee4789c684bfe6f098379677182d397",
+    "packages": [
+        {
+            "name": "planetteamspeak/ts3-php-framework",
+            "version": "1.1.28",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/planetteamspeak/ts3phpframework.git",
+                "reference": "6af8373f26ddbc35a3fff2fc2aba2df2e307463f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/planetteamspeak/ts3phpframework/zipball/6af8373f26ddbc35a3fff2fc2aba2df2e307463f",
+                "reference": "6af8373f26ddbc35a3fff2fc2aba2df2e307463f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "5.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "libraries/TeamSpeak3/TeamSpeak3.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Sven 'ScP' Paulsen",
+                    "email": "scp@planetteamspeak.com"
+                }
+            ],
+            "description": "Modern use-at-will framework that provides individual components to manage TeamSpeak 3 Server instances",
+            "homepage": "https://www.planetteamspeak.com",
+            "keywords": [
+                "api",
+                "filetransfer",
+                "interface",
+                "management",
+                "query",
+                "server",
+                "teamspeak",
+                "ts3"
+            ],
+            "time": "2017-12-06 16:53:01"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

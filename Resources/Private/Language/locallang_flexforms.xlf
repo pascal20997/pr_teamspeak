@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0" xmlns:t3="http://typo3.org/schemas/xliff">
+  <file source-language="en" datatype="plaintext" original="messages" date="2017-12-25T11:18:37Z" product-name="pr_teamspeak">
+    <header/>
+    <body>
+      <trans-unit id="teamspeak.general">
+        <source>General</source>
+      </trans-unit>
+
+      <trans-unit id="teamspeak.switchableControllerActions">
+        <source>Select a render mode</source>
+      </trans-unit>
+      <trans-unit id="teamspeak.switchableControllerActions.1">
+        <source>Channel list with automatically refresh (via ajax)</source>
+      </trans-unit>
+      <trans-unit id="teamspeak.switchableControllerActions.2">
+        <source>Static channel list without automatically refresh</source>
+      </trans-unit>
+
+      <trans-unit id="teamspeak.settings.general.server-ip">
+        <source>Server IP</source>
+      </trans-unit>
+      <trans-unit id="teamspeak.settings.general.port">
+        <source>Port</source>
+      </trans-unit>
+      <trans-unit id="teamspeak.settings.general.server-port">
+        <source>Server Port</source>
+      </trans-unit>
+      <trans-unit id="teamspeak.settings.general.use-authentication">
+        <source>Use authentication</source>
+      </trans-unit>
+      <trans-unit id="teamspeak.settings.general.username">
+        <source>Username</source>
+      </trans-unit>
+      <trans-unit id="teamspeak.settings.general.password">
+        <source>Password</source>
+      </trans-unit>
+
+      <trans-unit id="teamspeak.advanced">
+        <source>Advanced</source>
+      </trans-unit>
+      <trans-unit id="teamspeak.settings.advanced.icon-path">
+        <source>Custom icon path</source>
+      </trans-unit>
+      <trans-unit id="teamspeak.settings.advanced.pattern">
+        <source>Custom template pattern</source>
+      </trans-unit>
+      <trans-unit id="teamspeak.settings.advanced.cache-lifetime">
+        <source>Cache lifetime of channel list</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
