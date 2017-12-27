@@ -1,0 +1,15 @@
+{
+    "name": "kronova/pr-teamspeak",
+    "description": "TeamSpeak 3 frontend plugin",
+    "type": "typo3-cms-extension",
+    "require": {
+        "typo3/cms-core": ">=8.7.0,<=9.0"
+    },
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Pascal Rinker",
+            "email": "info@kronova.net"
+        }
+    ]
+}
