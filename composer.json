@@ -2,6 +2,7 @@
     "name": "kronova/pr-teamspeak",
     "description": "TeamSpeak 3 frontend plugin",
     "type": "typo3-cms-extension",
+    "version": "0.0.2",
     "require": {
         "typo3/cms-core": ">=8.7.0,<=9.0"
     },
@@ -11,5 +12,10 @@
             "name": "Pascal Rinker",
             "email": "info@kronova.net"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "Kronovanet\\PrTeamspeak\\": "Classes"
+        }
+    }
 }
