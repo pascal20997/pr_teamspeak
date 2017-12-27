@@ -10,6 +10,9 @@ require_once \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('pr_tea
     'teamspeak',
     [
         'TeamSpeak' => 'list,ajaxList',
+    ],
+    [
+        'TeamSpeak' => 'ajaxList'
     ]
 );
 
