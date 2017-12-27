@@ -1,0 +1,1 @@
+page.includeCSS.PrTeamspeakGeneral = EXT:pr_teamspeak/Resources/Public/Css/teamspeak.css

@@ -1,6 +1,6 @@
 // PAGE for ajax list
-pr_teamspeak_ajaxlist = PAGE
-pr_teamspeak_ajaxlist {
+PrTeamspeakAjaxList = PAGE
+PrTeamspeakAjaxList {
   typeNum = 20172512
 
   config {
@@ -12,5 +12,16 @@ pr_teamspeak_ajaxlist {
     admPanel = 0
   }
 
-  10 < tt_content.list.20.prteamspeak_teamspeak
+  // Get the content element from current page to render ajax list
+  10 < styles.content.get
+  10 {
+    stdWrap.trim = 1
+    select {
+      where = list_type = "prteamspeak_teamspeak"
+    }
+
+    renderObj < tt_content.list.20.prteamspeak_teamspeak
+  }
 }
+
+page.includeJSFooter.PrTeamspeakAjaxList = EXT:pr_teamspeak/Resources/Public/JavaScript/ajaxList.js

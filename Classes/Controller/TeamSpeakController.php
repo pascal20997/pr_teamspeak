@@ -15,7 +15,11 @@ namespace Kronovanet\PrTeamspeak\Controller;
 */
 
 use Kronovanet\PrTeamspeak\Service\TeamSpeakService;
+use TYPO3\CMS\Core\Messaging\AbstractMessage;
+use TYPO3\CMS\Core\Page\PageRenderer;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
  * Class TeamSpeakController
@@ -30,6 +34,11 @@ class TeamSpeakController extends ActionController
     protected $teamSpeakService;
 
     /**
+     * @var PageRenderer
+     */
+    protected $pageRenderer;
+
+    /**
      * inject teamSpeakService
      *
      * @param TeamSpeakService $teamSpeakService
@@ -41,13 +50,37 @@ class TeamSpeakController extends ActionController
     }
 
     /**
+     * inject pageRenderer
+     *
+     * @param PageRenderer $pageRenderer
+     * @return void
+     */
+    public function injectPageRenderer(PageRenderer $pageRenderer)
+    {
+        $this->pageRenderer = $pageRenderer;
+    }
+
+    /**
      * TeamSpeak 3 client list
      *
      * @return void
      */
     public function listAction()
     {
-        $this->view->assign('list', $this->teamSpeakService->getChannelListHTML());
+        $this->pageRenderer->addInlineSetting(
+            'PrTeamspeak',
+            'ajaxUrl',
+            $this->getControllerContext()->getUriBuilder()
+                ->reset()
+                ->setTargetPageType(20172512)
+                ->uriFor('ajaxList')
+        );
+        $this->pageRenderer->addInlineSetting(
+            'PrTeamspeak',
+            'ajaxRefreshTime',
+            $this->settings['advanced']['cache-lifetime']
+        );
+        $this->assignChannelListHTML();
     }
 
     /**
@@ -57,6 +90,32 @@ class TeamSpeakController extends ActionController
      */
     public function ajaxListAction()
     {
-        $this->view->assign('list', $this->teamSpeakService->getChannelListHTML());
+        $this->assignChannelListHTML();
+    }
+
+    /**
+     * Assign channel list HTML to the view
+     * On error: Log exception into system log and show an error message
+     * to the user
+     *
+     * @return void
+     */
+    protected function assignChannelListHTML()
+    {
+        try {
+            $this->view->assign('list', $this->teamSpeakService->getChannelListHTML());
+        } catch (\Exception $exception) {
+            $this->addFlashMessage(
+                LocalizationUtility::translate('frontend-exception'),
+                '',
+                AbstractMessage::ERROR
+            );
+            GeneralUtility::sysLog(
+                'Exception while getChannelListHTML: ' . $exception->getMessage()
+                . ' (Code: ' . $exception->getCode() . ')',
+                'pr_teamspeak',
+                GeneralUtility::SYSLOG_SEVERITY_ERROR
+            );
+        }
     }
 }

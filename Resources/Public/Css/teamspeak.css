@@ -1,0 +1,9 @@
+.teamspeak-channel-list table,
+.teamspeak-channel-list tbody,
+.teamspeak-channel-list tr,
+.teamspeak-channel-list td {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+}
