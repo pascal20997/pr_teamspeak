@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1fbe4745064d7da1e2d5467b13f409a2",
     "content-hash": "8ee4789c684bfe6f098379677182d397",
     "packages": [
         {
@@ -55,7 +54,7 @@
                 "teamspeak",
                 "ts3"
             ],
-            "time": "2017-12-06 16:53:01"
+            "time": "2017-12-06T16:53:01+00:00"
         }
     ],
     "packages-dev": [],

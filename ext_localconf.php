@@ -6,7 +6,7 @@ require_once \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('pr_tea
 
 // Configure frontend plugin
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'Kronovanet.PrTeamspeak',
+    'CryntonCom.PrTeamspeak',
     'teamspeak',
     [
         'TeamSpeak' => 'list,ajaxList',

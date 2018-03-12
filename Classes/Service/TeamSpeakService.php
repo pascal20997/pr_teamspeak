@@ -1,5 +1,5 @@
 <?php declare(strict_types=1);
-namespace Kronovanet\PrTeamspeak\Service;
+namespace CryntonCom\PrTeamspeak\Service;
 
 /*
 * This file is part of the TYPO3 CMS project.
@@ -27,7 +27,7 @@ use TYPO3\CMS\Extbase\Object\ObjectManager;
 /**
  * Class TeamSpeakService
  *
- * @package Kronovanet\PrTeamspeak\Service;
+ * @package CryntonCom\PrTeamspeak\Service;
  */
 class TeamSpeakService implements SingletonInterface
 {

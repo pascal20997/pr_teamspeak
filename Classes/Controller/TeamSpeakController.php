@@ -1,5 +1,5 @@
 <?php declare(strict_types=1);
-namespace Kronovanet\PrTeamspeak\Controller;
+namespace CryntonCom\PrTeamspeak\Controller;
 
 /*
 * This file is part of the TYPO3 CMS project.
@@ -14,7 +14,7 @@ namespace Kronovanet\PrTeamspeak\Controller;
 * The TYPO3 project - inspiring people to share!
 */
 
-use Kronovanet\PrTeamspeak\Service\TeamSpeakService;
+use CryntonCom\PrTeamspeak\Service\TeamSpeakService;
 use TYPO3\CMS\Core\Messaging\AbstractMessage;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -24,7 +24,7 @@ use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 /**
  * Class TeamSpeakController
  *
- * @package Kronovanet\PrTeamspeak\Controller;
+ * @package CryntonCom\PrTeamspeak\Controller;
  */
 class TeamSpeakController extends ActionController
 {
@@ -106,7 +106,7 @@ class TeamSpeakController extends ActionController
             $this->view->assign('list', $this->teamSpeakService->getChannelListHTML());
         } catch (\Exception $exception) {
             $this->addFlashMessage(
-                LocalizationUtility::translate('frontend-exception'),
+                LocalizationUtility::translate('frontend-exception', 'pr_teamspeak'),
                 '',
                 AbstractMessage::ERROR
             );
