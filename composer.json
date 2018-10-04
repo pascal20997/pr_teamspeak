@@ -3,7 +3,7 @@
     "description": "TeamSpeak 3 frontend plugin",
     "type": "typo3-cms-extension",
     "require": {
-        "typo3/cms-core": ">=8.7.0,<=9.0"
+        "typo3/cms-core": ">=8.7.0,<=9.5"
     },
     "license": "GPL-2.0-or-later",
     "authors": [
