@@ -21,14 +21,14 @@
 
 Notice: The fields username and password are optional.
 
-[PluginSettings]: https://raw.githubusercontent.com/pascal20997/pr_teamspeak/master/Documentation/Images/PluginSettings.png "Plugin settings"
+![PluginSettings](https://raw.githubusercontent.com/pascal20997/pr_teamspeak/master/Documentation/Images/PluginSettings.png)
 
 6. Edit the template of the target page or create a new extension template.
 7. Include the static template(s) adapt to your needs
 
-[IncludeTemplate]: https://raw.githubusercontent.com/pascal20997/pr_teamspeak/master/Documentation/Images/IncludeTemplate.png "Include static templates"
+![IncludeTemplate](https://raw.githubusercontent.com/pascal20997/pr_teamspeak/master/Documentation/Images/IncludeTemplate.png)
 
 ## Screenshots
 
-[Frontend]: https://raw.githubusercontent.com/pascal20997/pr_teamspeak/master/Documentation/Images/Frontend.png "Frontend demo"
+![Frontend](https://raw.githubusercontent.com/pascal20997/pr_teamspeak/master/Documentation/Images/Frontend.png)
 
