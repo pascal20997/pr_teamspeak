@@ -36,11 +36,14 @@ class TeamSpeak3_Helper_Convert
    */
   public static function bytes($bytes)
   {
+    // @todo: Fix precision lost from multiple rounding
     $kbytes = sprintf("%.02f", $bytes/1024);
     $mbytes = sprintf("%.02f", $kbytes/1024);
     $gbytes = sprintf("%.02f", $mbytes/1024);
     $tbytes = sprintf("%.02f", $gbytes/1024);
-
+  
+    // @todo: Fix assuming non-negative $bytes value, without validation
+    // Recommend something like: if( (float)$xbytes != 0 )
     if($tbytes >= 1)
       return $tbytes . " TB";
     if($gbytes >= 1)
@@ -55,6 +58,9 @@ class TeamSpeak3_Helper_Convert
 
   /**
    * Converts seconds/milliseconds to a human readable value.
+   * 
+   * Note: Assumes non-negative integer, but no validation
+   * @todo: Handle negative integer $seconds, or invalidate
    *
    * @param  integer $seconds
    * @param  boolean $is_ms
@@ -271,6 +277,24 @@ class TeamSpeak3_Helper_Convert
     }
 
     return $array;
+  }
+  
+  /**
+   * Converts a specified 32-bit unsigned integer value to a signed 32-bit integer value.
+   *
+   * @param  integer $unsigned
+   * @return integer
+   */
+  public static function iconId($unsigned)
+  {
+    $signed = (int) $unsigned;
+    
+    if(PHP_INT_SIZE > 4) // 64-bit
+    {
+      if($signed & 0x80000000) return $signed - 0x100000000;
+    }
+    
+    return $signed;
   }
 
   /**

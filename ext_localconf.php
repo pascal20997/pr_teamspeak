@@ -1,6 +1,4 @@
 <?php
-defined('TYPO3_MODE') or die();
-
 // Load autoloader for external libraries
 require_once \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('pr_teamspeak') . 'Resources/Libraries/autoload.php';
 

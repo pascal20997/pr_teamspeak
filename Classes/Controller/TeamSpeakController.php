@@ -39,6 +39,15 @@ class TeamSpeakController extends ActionController
     protected $pageRenderer;
 
     /**
+     * TeamSpeakController constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        \TeamSpeak3::init();
+    }
+
+    /**
      * inject teamSpeakService
      *
      * @param TeamSpeakService $teamSpeakService
