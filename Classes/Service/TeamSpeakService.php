@@ -89,11 +89,7 @@ class TeamSpeakService implements SingletonInterface
             // First get an instance of the node server because of autoload
             $teamSpeak3NodeServer = $this->getTeamSpeak3NodeServer();
             $htmlViewer = new TeamSpeak3_Viewer_Html(
-                PathUtility::getAbsoluteWebPath(
-                    GeneralUtility::getFileAbsFileName(
-                        $this->settings['advanced']['icon-path']
-                    )
-                ),
+                PathUtility::getAbsoluteWebPath(GeneralUtility::getFileAbsFileName($this->getIconPath())),
                 null,
                 null,
                 $this->settings['advanced']['pattern']
@@ -102,6 +98,18 @@ class TeamSpeakService implements SingletonInterface
             $this->cache->set($cacheIdentifier, $html, [], $this->settings['advanced']['cache-lifetime']);
         }
         return $html;
+    }
+
+    /**
+     * @return string
+     */
+    protected function getIconPath(): string
+    {
+        $iconPath = 'EXT:pr_teamspeak/Resources/Public/Images/ts3-php-framework/viewer/';
+        if ($this->settings['advanced']['override-icon-path']) {
+            $iconPath = $this->settings['advanced']['override-icon-path'];
+        }
+        return $iconPath;
     }
 
     /**

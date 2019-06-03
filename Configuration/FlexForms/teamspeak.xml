@@ -89,17 +89,15 @@
         </TCEforms>
         <type>array</type>
         <el>
-          <settings.advanced.icon-path>
+          <settings.advanced.override-icon-path>
             <TCEforms>
-              <label>LLL:EXT:pr_teamspeak/Resources/Private/Language/locallang_flexforms.xlf:teamspeak.settings.advanced.icon-path</label>
+              <label>LLL:EXT:pr_teamspeak/Resources/Private/Language/locallang_flexforms.xlf:teamspeak.settings.advanced.override-icon-path</label>
               <config>
                 <type>input</type>
-                <eval>trim,required</eval>
-                <placeholder>EXT:pr_teamspeak/Resources/Libraries/planetteamspeak/ts3-php-framework/images/viewer/</placeholder>
-                <default>EXT:pr_teamspeak/Resources/Libraries/planetteamspeak/ts3-php-framework/images/viewer/</default>
+                <eval>trim</eval>
               </config>
             </TCEforms>
-          </settings.advanced.icon-path>
+          </settings.advanced.override-icon-path>
           <settings.advanced.pattern>
             <TCEforms>
               <label>LLL:EXT:pr_teamspeak/Resources/Private/Language/locallang_flexforms.xlf:teamspeak.settings.advanced.pattern</label>

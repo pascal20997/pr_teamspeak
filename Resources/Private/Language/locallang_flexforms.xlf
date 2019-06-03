@@ -39,8 +39,8 @@
       <trans-unit id="teamspeak.advanced">
         <source>Advanced</source>
       </trans-unit>
-      <trans-unit id="teamspeak.settings.advanced.icon-path">
-        <source>Custom icon path</source>
+      <trans-unit id="teamspeak.settings.advanced.override-icon-path">
+        <source>Override icon path</source>
       </trans-unit>
       <trans-unit id="teamspeak.settings.advanced.pattern">
         <source>Custom template pattern</source>

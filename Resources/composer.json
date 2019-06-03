@@ -7,6 +7,11 @@
   "require": {
     "planetteamspeak/ts3-php-framework": "^1.1"
   },
+  "scripts": {
+    "post-install-cmd": [
+      "cp -R ./Libraries/planetteamspeak/ts3-php-framework/images/* ./Public/Images/ts3-php-framework"
+    ]
+  },
   "authors": [
     {
       "name": "Pascal Rinker",
