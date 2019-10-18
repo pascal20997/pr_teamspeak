@@ -1,5 +1,5 @@
 <?php declare(strict_types=1);
-namespace CryntonCom\PrTeamspeak\Controller;
+namespace KronovaNet\PrTeamspeak\Controller;
 
 /*
 * This file is part of the TYPO3 CMS project.
@@ -14,7 +14,8 @@ namespace CryntonCom\PrTeamspeak\Controller;
 * The TYPO3 project - inspiring people to share!
 */
 
-use CryntonCom\PrTeamspeak\Service\TeamSpeakService;
+use KronovaNet\PrTeamspeak\Service\TeamSpeakService;
+use TYPO3\CMS\Core\Log\LogManager;
 use TYPO3\CMS\Core\Messaging\AbstractMessage;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -24,7 +25,7 @@ use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 /**
  * Class TeamSpeakController
  *
- * @package CryntonCom\PrTeamspeak\Controller;
+ * @package KronovaNet\PrTeamspeak\Controller;
  */
 class TeamSpeakController extends ActionController
 {
@@ -43,7 +44,6 @@ class TeamSpeakController extends ActionController
      */
     public function __construct()
     {
-        parent::__construct();
         \TeamSpeak3::init();
     }
 
@@ -119,11 +119,9 @@ class TeamSpeakController extends ActionController
                 '',
                 AbstractMessage::ERROR
             );
-            GeneralUtility::sysLog(
-                'Exception while getChannelListHTML: ' . $exception->getMessage()
-                . ' (Code: ' . $exception->getCode() . ')',
-                'pr_teamspeak',
-                GeneralUtility::SYSLOG_SEVERITY_ERROR
+            GeneralUtility::makeInstance(LogManager::class)->getLogger(__CLASS__)->error(
+                'Exception while getChannelListHTML.',
+                ['exception' => $exception]
             );
         }
     }

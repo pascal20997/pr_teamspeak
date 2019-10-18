@@ -1,9 +1,9 @@
 {
-    "name": "crynton/pr-teamspeak",
+    "name": "kronova/pr-teamspeak",
     "description": "Frontend extension to display the channels and clients of a TeamSpeak 3 server",
     "type": "typo3-cms-extension",
     "require": {
-        "typo3/cms-core": "^8.7 || ^9.5"
+        "typo3/cms-core": "^8.7 || ^9.5 || ^10.0"
     },
     "license": "GPL-2.0-or-later",
     "authors": [
@@ -14,7 +14,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "CryntonCom\\PrTeamspeak\\": "Classes"
+            "KronovaNet\\PrTeamspeak\\": "Classes"
         }
     }
 }

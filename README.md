@@ -2,12 +2,12 @@
 
 ## Requirements
 
-- TYPO3 8.7 - 9.5
+- TYPO3 8.7 - 10.x
 - TeamSpeak 3 Server
 
 ## Install
 
-- Install using composer (recommended) `composer require crynton/pr-teamspeak`
+- Install using composer (recommended) `composer require kronova/pr-teamspeak`
 - Install via extension manager `pr_teamspeak`
 - Download extension from TER [open](https://extensions.typo3.org/extension/pr_teamspeak)
 
