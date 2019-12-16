@@ -1,10 +1,9 @@
 <?php
 // Register frontend plugin
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    'PrTeamspeak',
-    'teamspeak',
-    'TeamSpeak 3',
-    'EXT:pr_teamspeak/Resources/Public/Icons/Extension.png'
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+    ['TeamSpeak 3', 'prteamspeak_teamspeak', 'EXT:pr_teamspeak/Resources/Public/Icons/Extension.png'],
+    'list_type',
+    'pr_teamspeak'
 );
 
 // Add flexform for TeamSpeak plugin

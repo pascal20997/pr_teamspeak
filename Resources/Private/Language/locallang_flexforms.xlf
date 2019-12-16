@@ -7,16 +7,6 @@
         <source>General</source>
       </trans-unit>
 
-      <trans-unit id="teamspeak.switchableControllerActions">
-        <source>Select a render mode</source>
-      </trans-unit>
-      <trans-unit id="teamspeak.switchableControllerActions.1">
-        <source>Channel list with automatically refresh (via ajax)</source>
-      </trans-unit>
-      <trans-unit id="teamspeak.switchableControllerActions.2">
-        <source>Static channel list without automatically refresh</source>
-      </trans-unit>
-
       <trans-unit id="teamspeak.settings.general.server-ip">
         <source>Server IP</source>
       </trans-unit>
