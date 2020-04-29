@@ -50,21 +50,21 @@ class TeamSpeakAjaxEid
         $this->cache = GeneralUtility::makeInstance(CacheManager::class)->getCache('prteamspeak_teamspeak');
     }
 
-    public function process(ServerRequestInterface $request, Response $response): ResponseInterface
+    public function process(ServerRequestInterface $request): ResponseInterface
     {
         // CE contains the value of TSFE->currentRecord, which MUST contain tt_content: to be valid
         if (!array_key_exists('ce', $request->getQueryParams()) || strpos($request->getQueryParams()['ce'], 'tt_content:') !== 0) {
-            return $response;
+            return new JsonResponse(['message' => 'Parameter ce is missing!'], 500);
         }
         preg_match('@tt_content:(?<uid>[\d]+){1}@', $request->getQueryParams()['ce'], $matches);
         if (!array_key_exists('uid', $matches) || (int)$matches <= 0) {
-            return $response;
+            return new JsonResponse(['message' => 'Parameter ce is invalid!'], 500);
         }
         $this->uid = (int)$matches['uid'];
         $responseCode = 200;
         if (!$this->cache->has($this->uid)) {
             if (!$this->fetchFlexformSettings()) {
-                return $response;
+                return new JsonResponse(['message' => 'Could not fetch settings for passed ce!'], 500);
             }
             $data = ['html' => $this->getChannelListHtml()];
             if ($data['html'] === '') {
