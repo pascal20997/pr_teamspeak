@@ -4,32 +4,36 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ee4789c684bfe6f098379677182d397",
+    "content-hash": "ea093520984c5890c95f0b355bcd19e3",
     "packages": [
         {
             "name": "planetteamspeak/ts3-php-framework",
-            "version": "1.1.33",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/planetteamspeak/ts3phpframework.git",
-                "reference": "fb08150b1785bfd0c135f9a337d23be42344b46c"
+                "reference": "8ee256d9aab0a7b8466fd00bbd445a7278478890"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/planetteamspeak/ts3phpframework/zipball/fb08150b1785bfd0c135f9a337d23be42344b46c",
-                "reference": "fb08150b1785bfd0c135f9a337d23be42344b46c",
+                "url": "https://api.github.com/repos/planetteamspeak/ts3phpframework/zipball/8ee256d9aab0a7b8466fd00bbd445a7278478890",
+                "reference": "8ee256d9aab0a7b8466fd00bbd445a7278478890",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.1"
             },
             "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
                 "friendsofphp/php-cs-fixer": "^2.0.0",
+                "phpcompatibility/php-compatibility": "^8.2",
                 "phpunit/phpunit": "^4.8.35 || ^5.4.3 || ^6.0 || ^7.0",
                 "react/socket": "^0.8.5",
                 "satooshi/php-coveralls": "^1.1 || ^2.0",
+                "squizlabs/php_codesniffer": "^3.3",
                 "symfony/yaml": "~2.1|~3.0|~4.0"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "files": [
@@ -58,15 +62,24 @@
                 "teamspeak",
                 "ts3"
             ],
-            "time": "2018-08-03T11:46:37+00:00"
+            "support": {
+                "docs": "https://docs.planetteamspeak.com/ts3/php/framework",
+                "email": "info@planetteamspeak.com",
+                "issues": "https://github.com/planetteamspeak/ts3phpframework/issues",
+                "source": "https://github.com/planetteamspeak/ts3phpframework/tree/master"
+            },
+            "time": "2020-11-06T11:29:30+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "planetteamspeak/ts3-php-framework": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
 }

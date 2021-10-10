@@ -10,9 +10,14 @@ class ComposerStaticInit46bb1cc640fc07a3810c485c1eb3489a
         'ab8202fdaa7689cd9dcdacf8c6fba20d' => __DIR__ . '/..' . '/planetteamspeak/ts3-php-framework/libraries/TeamSpeak3/TeamSpeak3.php',
     );
 
+    public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->classMap = ComposerStaticInit46bb1cc640fc07a3810c485c1eb3489a::$classMap;
 
         }, null, ClassLoader::class);
     }

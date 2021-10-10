@@ -26,7 +26,7 @@
  * @class TeamSpeak3_Helper_String
  * @brief Helper class for string handling.
  */
-class TeamSpeak3_Helper_String implements ArrayAccess, Iterator, Countable
+class TeamSpeak3_Helper_String implements ArrayAccess, Iterator, Countable, JsonSerializable
 {
   /**
    * Stores the original string.
@@ -186,7 +186,7 @@ class TeamSpeak3_Helper_String implements ArrayAccess, Iterator, Countable
 
     if($regexp)
     {
-      return (preg_match("/" . $pattern . "/i", $this->string)) ? TRUE : FALSE;
+      return (preg_match("/" . preg_quote($pattern, '/') . "/i", $this->string)) ? TRUE : FALSE;
     }
     else
     {
@@ -457,7 +457,7 @@ class TeamSpeak3_Helper_String implements ArrayAccess, Iterator, Countable
     $pattern[] = "[\xF1-\xF3][\x80-\xBF]{3}";         // planes 4-15
     $pattern[] = "\xF4[\x80-\x8F][\x80-\xBF]{2}";     // plane 16
 
-    return boolval(preg_match("%(?:" . implode("|", $pattern) . ")+%xs", $this->string));
+    return (bool) preg_match("%(?:" . implode("|", $pattern) . ")+%xs", $this->string);
   }
 
   /**
@@ -851,6 +851,16 @@ class TeamSpeak3_Helper_String implements ArrayAccess, Iterator, Countable
   }
 
   /**
+   *  Return UTF-8 encoded string to for serializing to JSON.
+   * 
+   * @return string
+   */
+  public function jsonSerialize()
+  {
+    return $this->toUtf8()->string;
+  }
+
+  /**
    * @ignore
    */
   public function count()
@@ -887,7 +897,7 @@ class TeamSpeak3_Helper_String implements ArrayAccess, Iterator, Countable
    */
   public function current()
   {
-    return new TeamSpeak3_Helper_Char($this->string{$this->position});
+    return new TeamSpeak3_Helper_Char($this->string[$this->position]);
   }
 
   /**
@@ -911,7 +921,7 @@ class TeamSpeak3_Helper_String implements ArrayAccess, Iterator, Countable
    */
   public function offsetGet($offset)
   {
-    return ($this->offsetExists($offset)) ? new TeamSpeak3_Helper_Char($this->string{$offset}) : null;
+    return ($this->offsetExists($offset)) ? new TeamSpeak3_Helper_Char($this->string[$offset]) : null;
   }
 
   /**
@@ -921,7 +931,7 @@ class TeamSpeak3_Helper_String implements ArrayAccess, Iterator, Countable
   {
     if(!$this->offsetExists($offset)) return;
 
-    $this->string{$offset} = strval($value);
+    $this->string[$offset] = strval($value);
   }
 
   /**

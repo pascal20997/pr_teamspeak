@@ -5,7 +5,7 @@
     "vendor-dir": "Libraries"
   },
   "require": {
-    "planetteamspeak/ts3-php-framework": "^1.1"
+    "planetteamspeak/ts3-php-framework": "dev-master"
   },
   "scripts": {
     "post-install-cmd": [
